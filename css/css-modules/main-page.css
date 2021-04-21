@@ -33,6 +33,9 @@
 
 .main-img::before {
   background: var(--gradient);
+  background-size: 300% 300%;
+  animation: bg-colors 6s ease infinite;
+  /* Fix the animations */
 }
 
 .search-user {
@@ -110,7 +113,9 @@
 }
 
 .linkedin {
-  background: linear-gradient(95.58deg, #2188FF 1.56%, #0366D6 19.79%, #044289 90.57%);
+  background: linear-gradient(95.58deg, #2188FF 1.56%, #0366D6 19.79%, #044289 90.57%);background-size: 300% 300%;
+  background-size: 300% 300%;
+  animation: bg-colors 3s ease infinite;
 }
 
 .github {
