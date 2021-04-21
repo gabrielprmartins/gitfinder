@@ -14,7 +14,7 @@ const uglify = require('gulp-uglify');
 // Função para minificar, remover comentários e adicionar prefixos no CSS
 function minifyCSS() {
   return gulp
-  .src('css/**/*.css')
+  .src('css/css-modules/*.css')
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
     cascade: false
@@ -50,7 +50,7 @@ function browser() {
 
 // Função de watch do Gulp
 function watch() {
-  gulp.watch('css/**/*.css', minifyCSS);
+  gulp.watch('css/css-modules/*.css', minifyCSS);
   gulp.watch('js/main/*.js', gulpJS);
   gulp.watch(['*.html']).on('change', browserSync.reload);
 }
