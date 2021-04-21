@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
   <title>GitHub Profile Finder</title>
 </head>
 
 <body>
   <!-- Structure -->
-  <div class="structure">
-    <section>
+  <div class="main structure">
+    <section class="main-img">
       <h1 class="main-title">GitHub <br> Profile Finder</h1>
-      <form>
+      <form class="search-user">
         <label for="user">Search for a username</label>
         <div class="search">
           <input type="text" name="user" id="user">
@@ -22,7 +25,7 @@
         </div>
       </form>
     </section>
-    <section>
+    <section class="about">
       <h2 class="title">About</h2>
       <p class="paragraph">GitHub Profile Search uses Github's own API to filter the user you enter. This project was
         made as a way of studying in JavaScript</p>

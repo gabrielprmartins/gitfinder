@@ -1,0 +1,135 @@
+.main {
+  position: relative;
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 1380px;
+  display: grid;
+  grid-template-columns: 10fr 9fr;
+  gap: 0 60px;
+}
+
+.main section {
+  padding: 80px 20px;
+} 
+
+.main-img {
+  position: relative;
+  transition: .3s;
+}
+
+.main-img::before, .main-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 70%;
+  right: 0;
+}
+
+.main-img::after {
+  background: url('../../img/github-icon.svg') no-repeat center bottom 80px;
+}
+
+.main-img::before {
+  background: var(--gradient);
+}
+
+.search-user {
+  margin-top: 60px;
+}
+
+.search {
+  max-width: 460px;
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  border-top: 1px solid var(--white);
+  margin-top: 8px;
+  padding-top: 12px;
+}
+
+.search input[type="text"] {
+  padding: 15px 20px;
+  background: var(--input-color);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  border: none;
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.search input[type="submit"] {
+  padding: 15px 30px;
+  background: var(--light-grey) url('../../img/search-icon.svg') no-repeat center center;
+  box-shadow: var(--shadow);
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+  cursor: pointer;
+  margin-left: -20px;
+}
+
+.about {
+  align-self: end;
+}
+
+.about p {
+  margin: 20px 0 60px;
+}
+
+.about strong {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.075rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.about strong a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.social-media a + a {
+  margin-left: 20px;
+}
+
+.linkedin, .github {
+  padding: 10px 35px;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.linkedin {
+  background: linear-gradient(95.58deg, #2188FF 1.56%, #0366D6 19.79%, #044289 90.57%);
+}
+
+.github {
+  padding-left: 55px;
+  background: var(--light-grey) url('../../img/github-button-icon.svg') no-repeat;
+  background-position: 20% 50%;
+}
+
+@media (max-width: 960px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .main-title {
+    font-size: 2.6rem;
+  }
+  .main-img {
+    height: 95vh;
+  }
+  .main-img::before, .main-img::after {
+    width: 100%;
+  }
+}
