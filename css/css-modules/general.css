@@ -32,7 +32,7 @@ body {
   --input-color: #2B3440;
   --blue: #2188FF;
   --black-blue: #05264C;
-  --gradient: linear-gradient(45deg, #6F42C1, #05264C);
+  --gradient: linear-gradient(45deg, #6F42C1 40%, #05264C 60%);
   --linkedin-gradient: linear-gradient(95.58deg, #2188FF 1.56%, #0366D6 19.79%, #044289 90.57%);
   --shadow: 0px 20px 30px rgba(0, 0, 0, 0.25); 
 }
