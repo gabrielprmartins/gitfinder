@@ -34,8 +34,7 @@
 .main-img::before {
   background: var(--gradient);
   background-size: 300% 300%;
-  animation: bg-colors 6s ease infinite;
-  /* Fix the animations */
+  animation: bg-colors 15s infinite alternate;
 }
 
 .search-user {
@@ -113,9 +112,13 @@
 }
 
 .linkedin {
-  background: linear-gradient(95.58deg, #2188FF 1.56%, #0366D6 19.79%, #044289 90.57%);background-size: 300% 300%;
-  background-size: 300% 300%;
-  animation: bg-colors 3s ease infinite;
+  background-image: linear-gradient(to left, #0366D6, #2188FF, #044289);
+  background-size: 200%;
+  transition: .6s;
+}
+
+.linkedin:hover {
+  background-position: right;
 }
 
 .github {
@@ -131,10 +134,22 @@
   .main-title {
     font-size: 2.6rem;
   }
-  .main-img {
-    height: 95vh;
+  .main-img::after {
+    background-position: center right 20px;
   }
   .main-img::before, .main-img::after {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main section {
+    padding: 60px 20px;
+  }
+  .main-img {
+    height: 100vh;
+  } 
+  .main-img::after {
+    background-position: center bottom 20%;
   }
 }
