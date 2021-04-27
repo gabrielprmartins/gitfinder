@@ -1,0 +1,160 @@
+.user-main {
+  position: relative;
+}
+
+.user-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 40%;
+  height: 100vh;
+  right: 0;
+  background: var(--gradient);
+  background-size: 300% 300%;
+  animation: bg-colors 15s infinite alternate;
+}
+
+.user-data {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 60px 20px;
+}
+
+.username {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.275rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.user-desc {
+  font-weight: 600;
+}
+
+.follow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.275rem;
+  font-weight: 600;
+  color: var(--blue);
+  display: block;
+  padding: 32px 0px 60px 40px;
+  background: url('../../img/followers.svg') no-repeat;
+  background-position: 0% 35%;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-rep {
+  background: var(--light-grey) url('../../img/arrow.svg') no-repeat;
+}
+
+.btn-search {
+  background: var(--black-blue) url('../../img/search-icon.svg') no-repeat;
+  background-size: 15px;
+  margin-left: 20px;
+}
+
+.btn-rep, .btn-search {
+  padding: 10px 35px 10px 20px;
+  background-position: 90%;
+}
+
+.repositories {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-rep {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 60px 0;
+}
+
+.rep-item {
+  background: var(--black-grey);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+}
+
+.rep-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.p-rep {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 0px 0px;
+}
+
+.rep-info {
+  margin-top: 20px;
+  display: flex;
+  align-self: baseline;
+}
+
+.rep-info li {
+  font-family: 'Lato', sans-serif;
+  color: var(--blue);
+}
+
+.stars {
+  background: url('../../img/star.svg') no-repeat;
+}
+
+.forks {
+  background: url('../../img/fork.svg') no-repeat;
+}
+
+.stars, .forks {
+  padding-left: 20px;
+  background-position: 0% 70%;
+  background-size: 15px;
+}
+
+.rep-info li + li {
+  margin-left: 30px;
+}
+
+@media (max-width: 960px) {
+  .user-data {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px 0;
+  }
+  .user-desc {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-rep, .btn-search {
+    padding: 10px 30px 10px 15px;
+    font-size: .9rem;
+  }
+  .btn-search {
+    margin-left: 10px;
+    background-size: 12px;
+  }
+}
