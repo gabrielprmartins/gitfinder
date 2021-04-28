@@ -39,7 +39,7 @@ export default class GitHubApi {
           
           this.structure = document.querySelector('.structure');
           this.structure.classList.remove('main');
-          this.structure.classList.add('user-main');
+          this.structure.classList.add('animate', 'user-main');
           this.structure.innerHTML = this.templateUser;
 
         } else {
@@ -84,16 +84,10 @@ export default class GitHubApi {
     });
   }
 
-  structureAnimation() {
-    const structure = document.querySelector('.structure');
-    structure.classList.add('animate');
-  }
-
   addGitSearchEvent() {
     this.button.addEventListener('click', this.formatInputValue);
     this.button.addEventListener('click', this.fetchUser);
     this.button.addEventListener('click', this.fetchRepositories);
-    this.button.addEventListener('click', this.structureAnimation);
   }
 
   init() {
