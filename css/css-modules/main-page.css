@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: 10fr 9fr;
   gap: 0 60px;
+  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
+
 }
 
 .main section {
@@ -17,8 +19,7 @@
   transition: .3s;
 }
 
-.main-img > * {
-  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
+.main-img {
 }
 
 .main-img::before, .main-img::after {
@@ -32,7 +33,6 @@
 }
 
 .main-img::after {
-  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
   background: url('../../img/github-icon.svg') no-repeat center bottom 80px;
 }
 
@@ -78,7 +78,6 @@
 }
 
 .about {
-  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
   align-self: end;
 }
 
