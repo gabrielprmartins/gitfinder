@@ -4,10 +4,13 @@ export default class GitHubApi {
 
     this.addGitSearchEvent = this.addGitSearchEvent.bind(this);
   }
+
+  formatInputValue(event) {
+    this.input = event.target.previousElementSibling.value.trim();
+  }
   
   onSubmit(event) {
     event.preventDefault();
-    this.input = event.target.previousElementSibling.value.trim();
     if (this.input.length > 0) {
       event.target.disabled = true;
       this.urlUser = 'https://api.github.com/users';
@@ -33,44 +36,43 @@ export default class GitHubApi {
               </figure>
             </section>
           `;
+          
           this.structure = document.querySelector('.structure');
           this.structureClone = this.structure.cloneNode(true);
           this.structure.classList.remove('main');
-          this.structure.classList.add('user-main');
+          this.structure.classList.add('animate', 'user-main');
           this.structure.innerHTML = this.templateUser;
-          this.structure.classList.add('animate');
-          setTimeout(() => this.structure.classList.remove('animate'), 1500);
 
-          this.urlRepositories = `https://api.github.com/users/${this.input}/repos`;
-          fetch(`${this.urlRepositories}`)
-          .then(response => response.json())
-          .then(json => {
-            json.forEach(({ name, stargazers_count, forks, description, language, html_url }) => {
-              this.templateRepositories += `
-                <a href="${html_url}" target="_blank" class="rep-item">
-                  <h2 class="rep-title">${name}</h2>
-                  <p class="paragraph p-rep">${description ? description : ''}</p>
-                  <ul class="rep-info">
-                    <li>${language ? language : ''}</li>
-                    <li class="stars">${stargazers_count}</li>
-                    <li class="forks">${forks}</li>
-                  </ul>
-                </a>
-              `;
-            });
+          // this.urlRepositories = `https://api.github.com/users/${this.input}/repos`;
+          // fetch(`${this.urlRepositories}`)
+          // .then(response => response.json())
+          // .then(json => {
+          //   json.forEach(({ name, stargazers_count, forks, description, language, html_url }) => {
+          //     this.templateRepositories += `
+          //       <a href="${html_url}" target="_blank" class="rep-item">
+          //         <h2 class="rep-title">${name}</h2>
+          //         <p class="paragraph p-rep">${description ? description : ''}</p>
+          //         <ul class="rep-info">
+          //           <li>${language ? language : ''}</li>
+          //           <li class="stars">${stargazers_count}</li>
+          //           <li class="forks">${forks}</li>
+          //         </ul>
+          //       </a>
+          //     `;
+          //   });
 
-            this.structure.innerHTML += `
-              <section class="repositories" id="repositories">
-                <h1 class="main-title">All your repositories</h1>
-                <div class="grid-rep">
-                  ${this.templateRepositories.replace('undefined', '')}
-                </div>
-              </section>
-            `;
+          //   this.structure.innerHTML += `
+          //     <section class="repositories" id="repositories">
+          //       <h1 class="main-title">All your repositories</h1>
+          //       <div class="grid-rep">
+          //         ${this.templateRepositories.replace('undefined', '')}
+          //       </div>
+          //     </section>
+          //   `;
 
-            const backButton = this.structure.querySelector('.btn-search');
-            backButton.addEventListener('click', window.onload);
-          });
+            // const backButton = this.structure.querySelector('.btn-search');
+            // backButton.addEventListener('click', window.onload);
+          // });
         } else {
           alert('Username not found');
         }
@@ -81,6 +83,7 @@ export default class GitHubApi {
   }
 
   addGitSearchEvent() {
+    this.button.addEventListener('click', this.formatInputValue);
     this.button.addEventListener('click', this.onSubmit);
   }
 
