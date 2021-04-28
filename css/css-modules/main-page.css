@@ -17,6 +17,10 @@
   transition: .3s;
 }
 
+.main-img > * {
+  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
 .main-img::before, .main-img::after {
   content: '';
   position: absolute;
@@ -28,6 +32,7 @@
 }
 
 .main-img::after {
+  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
   background: url('../../img/github-icon.svg') no-repeat center bottom 80px;
 }
 
@@ -73,6 +78,7 @@
 }
 
 .about {
+  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
   align-self: end;
 }
 
