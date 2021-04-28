@@ -29,7 +29,7 @@
   box-shadow: var(--shadow);
 }
 
-.structure.animate > * {
+.structure.animate {
   animation: show-down 1s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
