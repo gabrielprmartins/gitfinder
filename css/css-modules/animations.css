@@ -12,18 +12,22 @@
 
 @keyframes show-down {
   from {
+    opacity: 0;
     transform: translate3d(0px, 50vh, 0px);
   }
   to {
+    opacity: 1;
     transform: translate3d(0px, 0px, 0px);
   }
 }
 
 @keyframes show-up {
   from {
+    opacity: 0;
     transform: translate3d(0px, -50vh, 0px);
   }
   to {
+    opacity: 1;
     transform: translate3d(0px, 0px, 0px);
   }
 }

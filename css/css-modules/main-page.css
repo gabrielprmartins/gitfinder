@@ -6,8 +6,7 @@
   display: grid;
   grid-template-columns: 10fr 9fr;
   gap: 0 60px;
-  animation: show-up 1s cubic-bezier(0.65, 0, 0.35, 1);
-
+  animation: show-up 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .main section {
@@ -17,9 +16,6 @@
 .main-img {
   position: relative;
   transition: .3s;
-}
-
-.main-img {
 }
 
 .main-img::before, .main-img::after {
