@@ -7,10 +7,9 @@ export default class GitHubApi {
   
   onSubmit(event) {
     event.preventDefault();
-    event.target.disabled = true;
-    console.log(event.target)
     this.input = event.target.previousElementSibling.value.trim();
     if (this.input.length > 0) {
+      event.target.disabled = true;
       this.urlUser = 'https://api.github.com/users';
       fetch(`${this.urlUser}/${this.input}`)
       .then(response => response.json())
@@ -39,9 +38,8 @@ export default class GitHubApi {
           this.structure.classList.remove('main');
           this.structure.classList.add('user-main');
           this.structure.innerHTML = this.templateUser;
-          const animation = this.structure.querySelector('.user-data');
           this.structure.classList.add('animate');
-          setTimeout(() => this.structure.classList.remove('animate'), 1000);
+          setTimeout(() => this.structure.classList.remove('animate'), 1500);
 
           this.urlRepositories = `https://api.github.com/users/${this.input}/repos`;
           fetch(`${this.urlRepositories}`)
@@ -85,15 +83,10 @@ export default class GitHubApi {
   addGitSearchEvent() {
     this.button.addEventListener('click', this.onSubmit);
   }
-  
-  onPopstagePage() {
-    window.addEventListener('popstate', () => window.location.href = window.location.href);
-  }
 
   init() {
     if (this.button) {
       this.addGitSearchEvent();
-      this.onPopstagePage();
     }
     return this;
   }
