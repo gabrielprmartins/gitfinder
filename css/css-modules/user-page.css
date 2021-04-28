@@ -24,6 +24,15 @@
   padding: 60px 20px;
 }
 
+.user-img img {
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.structure.animate > * {
+  animation: show-down 1s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
 .username {
   font-family: 'Poppins', sans-serif;
   font-size: 1.275rem;

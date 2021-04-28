@@ -7,6 +7,8 @@ export default class GitHubApi {
   
   onSubmit(event) {
     event.preventDefault();
+    event.target.disabled = true;
+    console.log(event.target)
     this.input = event.target.previousElementSibling.value.trim();
     if (this.input.length > 0) {
       this.urlUser = 'https://api.github.com/users';
@@ -27,8 +29,8 @@ export default class GitHubApi {
                   <a href="" class="btn btn-search">New Search</a>
                 </div>
               </div>
-              <figure>
-                <img src="${avatar_url}" class="user-img" alt="${name}">
+              <figure class="user-img">
+                <img src="${avatar_url}" alt="${name}">
               </figure>
             </section>
           `;
@@ -38,7 +40,8 @@ export default class GitHubApi {
           this.structure.classList.add('user-main');
           this.structure.innerHTML = this.templateUser;
           const animation = this.structure.querySelector('.user-data');
-          animation.classList.add('animate');
+          this.structure.classList.add('animate');
+          setTimeout(() => this.structure.classList.remove('animate'), 1000);
 
           this.urlRepositories = `https://api.github.com/users/${this.input}/repos`;
           fetch(`${this.urlRepositories}`)
@@ -82,10 +85,15 @@ export default class GitHubApi {
   addGitSearchEvent() {
     this.button.addEventListener('click', this.onSubmit);
   }
+  
+  onPopstagePage() {
+    window.addEventListener('popstate', () => window.location.href = window.location.href);
+  }
 
   init() {
     if (this.button) {
       this.addGitSearchEvent();
+      this.onPopstagePage();
     }
     return this;
   }
