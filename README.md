@@ -23,12 +23,6 @@ Check the final result at https://gitfinder-one.vercel.app/
   # Get in
   $ cd gitfinder
 
-  # Install as dependencies
-  $ npm install
-
-  # Developer mode
-  $ npm run dev
-
   # Use Live Server to view it on your machine
 ```
 
