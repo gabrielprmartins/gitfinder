@@ -13,7 +13,6 @@ Check the final result at https://gitfinder-one.vercel.app/
 
 ## :hammer: Tools
 - [JavaScript](https://www.javascript.com/)
-- [NPM](https://www.npmjs.com/)
 
 ## :gear: Installation
 ```bash
